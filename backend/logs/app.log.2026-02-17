@@ -1,0 +1,5 @@
+2026-02-17 19:59:58,743 | INFO | app | Conexión a PostgreSQL establecida correctamente
+2026-02-17 19:59:59,342 | INFO | app | Tablas creadas/verificadas correctamente
+2026-02-17 19:59:59,345 | INFO | app | Conexión a la base de datos verificada correctamente
+2026-02-17 21:49:41,537 | WARNING | app | Token inválido o expirado
+2026-02-17 22:20:27,990 | WARNING | app | Token inválido o expirado

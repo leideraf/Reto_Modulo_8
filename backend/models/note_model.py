@@ -6,7 +6,7 @@ from core.database import Base
 
 
 class Note(Base):
-    __tablename__ = "notes"
+    __tablename__ = "notas"
 
     id = Column(Integer, primary_key=True, index=True)
 
