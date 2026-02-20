@@ -230,7 +230,7 @@ CREATE DATABASE sistema_notas;
 ```
 6️⃣ Ejecutar el servidor
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 🌐 Acceso a la API
 La API estará disponible en:
