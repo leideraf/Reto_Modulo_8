@@ -1,0 +1,304 @@
+📒 Mini Sistema de Notas Personales
+Aplicación Web con Autenticación JWT y API REST
+📌 Descripción del Proyecto
+
+Este proyecto consiste en el desarrollo de una aplicación web moderna que permite a los usuarios gestionar notas personales de manera organizada y segura.
+
+La solución está compuesta por:
+
+🎨 Frontend: React + Vite + TailwindCSS
+
+⚙ Backend: FastAPI + PostgreSQL
+
+🔐 Autenticación real con JWT
+
+🛡 Protección de rutas en frontend y backend
+
+🗄 Persistencia de datos en base de datos relacional
+
+El sistema permite a los usuarios:
+
+Registrarse e iniciar sesión.
+
+Crear notas personales.
+
+Asignar categorías.
+
+Editar y eliminar notas.
+
+Filtrar notas por categoría.
+
+Visualizar información en una interfaz moderna y responsiva.
+
+🛠 Tecnologías Utilizadas
+Capa	Tecnología
+Frontend	React
+Bundler	Vite
+Estilos	TailwindCSS
+Navegación	React Router
+HTTP	Axios
+Backend	FastAPI
+ORM	SQLAlchemy
+Base de datos	PostgreSQL
+Seguridad	JWT (python-jose)
+Hashing	bcrypt (Passlib)
+Configuración	Pydantic Settings
+Logging	Logging con rotación diaria
+🏗 Arquitectura del Proyecto
+
+El sistema sigue una arquitectura cliente-servidor desacoplada.
+
+Frontend (React)
+      │
+      │  HTTP Requests (Axios)
+      ▼
+Backend (FastAPI)
+      │
+      │  ORM (SQLAlchemy)
+      ▼
+PostgreSQL
+📂 Estructura Backend
+backend/
+│
+├── app/
+│   ├── main.py
+│   ├── auth/
+│   ├── core/
+│   ├── models/
+│   ├── routes/
+│   ├── schemas/
+│
+├── logs/
+├── .env
+├── requirements.txt
+📂 Estructura Frontend
+frontend/
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── api/
+│   ├── routes/
+│
+├── package.json
+🔐 Flujo de Autenticación
+Diagrama del flujo completo
+Usuario
+   │
+   ▼
+Registro / Login (Frontend)
+   │
+   ▼
+POST /auth/login (Backend)
+   │
+   ▼
+Validación contraseña (bcrypt)
+   │
+   ▼
+Generación JWT
+   │
+   ▼
+Frontend guarda token (localStorage)
+   │
+   ▼
+Axios envía Authorization: Bearer TOKEN
+   │
+   ▼
+Backend valida token
+   │
+   ▼
+Acceso a rutas protegidas (/notes)
+🔐 Backend (FastAPI)
+Funcionalidades
+
+Registro de usuarios
+
+Login con generación de JWT
+
+CRUD de notas protegido
+
+Validación de usuario activo
+
+Hash seguro de contraseñas
+
+Logging rotativo
+
+Configuración por variables de entorno
+
+🚀 Cómo ejecutar el Backend
+1️⃣ Clonar repositorio
+git clone <URL_DEL_REPOSITORIO>
+cd backend
+2️⃣ Crear entorno virtual
+python -m venv venv
+venv\Scripts\activate
+3️⃣ Instalar dependencias
+pip install -r requirements.txt
+4️⃣ Configurar variables de entorno
+
+Crear archivo .env:
+
+DB_USER=postgres
+DB_PASS=tu_contraseña
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=sistema_notas
+
+SECRET_KEY=CAMBIAR_ESTE_SECRETO_LARGO_Y_UNICO
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+CORS_ORIGINS=http://localhost:5173
+5️⃣ Crear base de datos
+CREATE DATABASE sistema_notas;
+6️⃣ Ejecutar servidor
+uvicorn app.main:app --reload
+
+Disponible en:
+
+http://127.0.0.1:8000
+
+Documentación automática:
+
+http://127.0.0.1:8000/docs
+🎨 Frontend (React + Vite)
+Funcionalidades
+
+Registro y login
+
+Protección de rutas con ProtectedRoute
+
+Interceptor Axios automático
+
+CRUD completo de notas
+
+Validación con hook personalizado
+
+Manejo global de errores 401
+
+🚀 Cómo ejecutar el Frontend
+1️⃣ Ingresar a la carpeta
+cd frontend
+2️⃣ Instalar dependencias
+npm install
+
+Requisitos:
+
+Node.js v18+
+
+npm
+
+3️⃣ Configurar URL del backend
+
+En axiosClient.js:
+
+baseURL: "http://127.0.0.1:8000"
+4️⃣ Iniciar servidor
+npm run dev
+
+Disponible en:
+
+http://localhost:5173
+🔎 Flujo Detallado de Autenticación
+1️⃣ Registro
+
+Usuario ingresa email y password.
+
+useFormValidation valida campos.
+
+Se envía POST /auth/register.
+
+Backend hashea contraseña y guarda usuario.
+
+2️⃣ Login
+
+Usuario ingresa credenciales.
+
+Backend verifica contraseña con bcrypt.
+
+Se genera JWT firmado.
+
+Frontend guarda token en localStorage.
+
+localStorage.setItem("auth", JSON.stringify(auth));
+3️⃣ Protección de rutas
+
+ProtectedRoute:
+
+Verifica existencia del token.
+
+Si no existe → redirige a /login.
+
+Si existe → permite acceso.
+
+4️⃣ Validación en Backend
+
+El backend valida:
+
+Firma del token
+
+Expiración
+
+Usuario activo
+
+Propiedad de la nota
+
+Si falla → 401 Unauthorized.
+
+🤖 Uso de Inteligencia Artificial
+
+Durante el desarrollo se utilizó IA como herramienta de apoyo técnico y estructural.
+
+1️⃣ Componentes refactorizados
+
+Refactorización completa de NoteForm
+
+Corrección de errores de estado
+
+Mejora estructural de NoteCard
+
+2️⃣ Mejora de lógica
+
+Implementación correcta de JWT real
+
+Interceptor Axios automático
+
+Manejo global de errores
+
+Organización modular del proyecto
+
+3️⃣ Sugerencias aceptadas
+
+Separar validaciones en useFormValidation.
+
+Centralizar peticiones en axiosClient.
+
+Implementar autenticación real con JWT.
+
+Crear backend independiente con FastAPI + PostgreSQL aunque no era obligatorio.
+
+Modularizar arquitectura.
+
+Manejar token automáticamente en headers.
+
+Estructurar profesionalmente el flujo completo cliente-servidor.
+
+📊 Estado Actual del Proyecto
+
+✔ Backend con JWT funcional
+✔ Registro y login seguros
+✔ CRUD protegido por usuario
+✔ Frontend conectado a backend real
+✔ Interceptor Axios implementado
+✔ Arquitectura modular
+✔ Seguridad con bcrypt
+✔ Proyecto escalable
+
+🎯 Conclusión
+
+El proyecto evolucionó de un ejercicio básico a una implementación profesional cliente-servidor con autenticación segura, arquitectura modular y buenas prácticas de desarrollo.
+
+Se superó el alcance mínimo solicitado para demostrar dominio completo del flujo:
+
+Frontend → Backend → Base de datos → Seguridad → Autorización
