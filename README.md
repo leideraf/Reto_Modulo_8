@@ -375,7 +375,16 @@ Durante el desarrollo se utilizó IA como herramienta de apoyo técnico y estruc
 
 ✔ Proyecto escalable.
 
-## Capturas UI
+## Capturas de la interfaz
+
+### Pantalla de Login
+![Login](frontend/docs/UI/login.png)
+
+### Registro de Usuario
+![Registro](frontend/docs/UI/registro.png)
+
+### Panel de Notas
+![Notas](frontend/docs/UI/Notas.png)
 
 
 ### 🎯 Conclusión
