@@ -1,0 +1,3 @@
+2026-03-08 10:41:17,695 | INFO | app | Conexión a PostgreSQL establecida correctamente
+2026-03-08 10:41:18,749 | INFO | app | Tablas creadas/verificadas correctamente
+2026-03-08 10:41:18,752 | INFO | app | Conexión a la base de datos verificada correctamente
