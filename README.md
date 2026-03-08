@@ -375,6 +375,9 @@ Durante el desarrollo se utilizó IA como herramienta de apoyo técnico y estruc
 
 ✔ Proyecto escalable.
 
+## Capturas UI
+
+
 ### 🎯 Conclusión
 
 El proyecto evolucionó de un ejercicio básico a una implementación profesional cliente-servidor con autenticación segura, arquitectura modular y buenas prácticas de desarrollo.
