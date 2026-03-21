@@ -394,3 +394,11 @@ El proyecto evolucionó de un ejercicio básico a una implementación profesiona
 Se superó el alcance mínimo solicitado para demostrar dominio completo del flujo:
 
 Frontend → Backend → Base de datos → Seguridad → Autorización
+
+---
+
+
+- **Autor:** Leider Elian Arias Franco
+- **Programa:** Python
+- **Módulo:** Autenticacion y Api
+- **Video:** https://youtu.be/hldg4NwDmVw
